@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/"
+title = "Have Fun"
+description = "A mobile event discovery app for Tunisia that helps people find something exciting happening nearby and get out into real life."
+version = "1.0.0"
+id = "artifacts/have-fun"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/" ]
+localPort = 18266
+
+[services.development]
+run = "pnpm --filter @workspace/have-fun run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/have-fun", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/have-fun", "run", "serve" ]
+
+[services.env]
+PORT = "18266"
+BASE_PATH = "/"

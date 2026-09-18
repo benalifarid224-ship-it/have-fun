@@ -1,0 +1,884 @@
+I want you to build a mobile application called "Have Fun".
+
+IMPORTANT: Do not treat this as a generic event/social-media app. The core philosophy is:
+
+"People are bored, they don't know what to do, and they don't know what is happening around them. Have Fun discovers activities and events and tells them about them. The goal is to get people OUT of the app and into real life."
+
+The app should be designed for Android and iPhone.
+
+==================================================
+1. PRODUCT IDEA
+==================================================
+
+Have Fun is an event/activity discovery application.
+
+Users can discover things happening around them in their country, starting with Tunisia.
+
+Examples:
+- Football matches
+- Music concerts
+- Festivals
+- Parties
+- Food events
+- Art exhibitions
+- Gaming events
+- Car meets
+- Drift events
+- Outdoor activities
+- Sports
+- Cultural activities
+- Student activities
+- Shows
+- Any interesting activity where people can go and have fun
+
+The app should answer one simple question:
+
+"I'm bored. What can I do?"
+
+The app should quickly show:
+- What is happening today
+- What is happening tomorrow
+- What is happening this week
+- What is happening next month
+
+The user should not need to spend a long time browsing.
+
+==================================================
+2. VERY IMPORTANT PRODUCT PHILOSOPHY
+==================================================
+
+DO NOT build this as a social network.
+
+There is NO:
+- Chat
+- Direct messaging
+- Complex friend system
+- Feed designed to keep people scrolling
+- Unnecessary social features
+
+The app should NOT try to maximize time spent inside the app.
+
+The desired user journey is:
+
+EVENT DISCOVERED
+       ↓
+NOTIFICATION
+       ↓
+USER SEES THE EVENT
+       ↓
+USER OPENS EVENT
+       ↓
+USER GETS ALL IMPORTANT INFORMATION
+       ↓
+MAP / TICKET / EXTERNAL EVENT LINK
+       ↓
+USER LEAVES THE APP
+       ↓
+USER GOES HAVE FUN
+
+The app is a bridge between people and real-world activities.
+
+==================================================
+3. BRAND / VISUAL IDENTITY
+==================================================
+
+The visual design is extremely important.
+
+Use a dark, cinematic, futuristic interface inspired by high-quality modern game interfaces.
+
+The two visual references I provided show the exact feeling I want:
+- dark background
+- deep navy / black
+- neon purple
+- electric blue
+- pink/magenta
+- gold/orange accents
+- glowing borders
+- glassmorphism
+- soft gradients
+- colorful event imagery
+- luminous buttons
+- subtle shadows
+- polished animations
+- premium gaming-inspired UI
+
+DO NOT make the application look like a boring business/event calendar.
+
+It should feel:
+- exciting
+- youthful
+- energetic
+- social without having chat
+- futuristic
+- adventurous
+- colorful
+- premium
+- fun
+
+The application should feel like something that makes the user think:
+
+"Something is happening. Let's go."
+
+==================================================
+4. "COME WITH US — HAVE FUN"
+==================================================
+
+This phrase is an important part of the brand.
+
+Use:
+
+"COME WITH US"
+"Have fun!"
+
+as a recurring notification/brand message.
+
+The feeling should be an invitation, not an advertisement.
+
+For example:
+
+🔔 COME WITH US
+Have fun!
+
+🎵 Live Concert — Tunis
+Today • 20:00
+📍 Carthage
+❤️ 1.8K interested
+
+[ VIEW EVENT → ]
+
+Another example:
+
+⚽ COME WITH US
+Have fun!
+
+Football match tonight
+20:00 • Tunis
+❤️ 2.4K interested
+
+[ VIEW EVENT → ]
+
+==================================================
+5. NOTIFICATION EXPERIENCE
+==================================================
+
+Notifications are one of the MOST IMPORTANT parts of the application.
+
+The user should receive useful notifications about interesting activities.
+
+Examples:
+
+"🔥 Something is happening tomorrow"
+
+"🎵 Something fun this weekend"
+
+"⚽ Football tonight"
+
+"🏎️ New activity near you"
+
+"🎉 8 new activities were added in Tunis"
+
+Notifications should contain enough information to immediately understand the opportunity.
+
+A notification/event card can contain:
+- Event category
+- Event image
+- Event title
+- Short description
+- Date
+- Time
+- Location
+- Number of interested people
+- View Event button
+
+The notification design should visually resemble the reference I provided:
+- floating/glowing card
+- dark translucent background
+- neon border
+- category icon
+- event image
+- colorful accents
+- strong "View Event" button
+- "Come with us / Have fun!" branding
+
+Do not make notifications annoying.
+
+Later, users should be able to control:
+- categories they receive
+- city/location
+- notification frequency
+
+==================================================
+6. EVENT CATEGORIES
+==================================================
+
+Create categories with their own visual identity.
+
+Each event should have a COLOR and FEELING based on its category.
+
+Categories:
+
+⚽ Football / Sports
+Feeling:
+- energetic
+- stadium
+- competitive
+- powerful
+
+Color direction:
+- electric green / blue
+
+🎵 Music
+Feeling:
+- vibrant
+- neon
+- energetic
+- festival atmosphere
+
+Color direction:
+- purple / pink / magenta
+
+🎉 Party
+Feeling:
+- explosive
+- colorful
+- celebration
+
+Color direction:
+- pink / orange / purple
+
+🍔 Food
+Feeling:
+- warm
+- social
+- delicious
+- relaxed
+
+Color direction:
+- orange / gold
+
+🎨 Art & Culture
+Feeling:
+- creative
+- elegant
+- artistic
+
+Color direction:
+- violet / cyan
+
+🏎️ Cars / Drift
+Feeling:
+- speed
+- adrenaline
+- motorsport
+- aggressive energy
+
+Color direction:
+- red / orange / electric blue
+
+🎮 Gaming
+Feeling:
+- futuristic
+- digital
+- competitive
+
+Color direction:
+- cyan / purple
+
+🏖️ Outdoor
+Feeling:
+- freedom
+- adventure
+- fresh air
+
+Color direction:
+- cyan / turquoise / green
+
+🎤 Shows
+Feeling:
+- entertainment
+- stage
+- excitement
+
+Color direction:
+- gold / purple
+
+🎓 Student
+Feeling:
+- young
+- social
+- discovery
+
+Color direction:
+- blue / purple
+
+Also have:
+⭐ All
+⋯ Other
+
+IMPORTANT:
+Keep the overall Have Fun brand consistent, but let each category have its own accent colors, gradients, icons, and atmosphere.
+
+==================================================
+7. HOME / DISCOVER SCREEN
+==================================================
+
+Create a beautiful Discover screen.
+
+Top area:
+
+"COME WITH US"
+"Have fun!"
+
+Then location:
+
+📍 Tunis, Tunisia
+
+Then time filters:
+
+TODAY
+TOMORROW
+THIS WEEK
+NEXT MONTH
+
+Then horizontal category selector:
+
+⭐ All
+⚽ Football
+🎵 Music
+🎉 Party
+🍔 Food
+🎨 Art
+🏎️ Drift
+🎮 Gaming
+🏖️ Outdoor
+⋯ Other
+
+Then event cards.
+
+Each event card should include:
+- large image
+- category
+- event name
+- short description
+- date
+- time
+- location
+- interested count
+- colorful category glow
+- View Event button
+
+Example:
+
+🎵 MUSIC
+
+LIVE CONCERT — TUNIS
+
+Good music, great vibes, amazing people!
+
+📅 Today, 20:00
+📍 Carthage
+❤️ 1.8K interested
+
+[ VIEW EVENT → ]
+
+==================================================
+8. EVENT DETAILS
+==================================================
+
+When the user taps an event, open a beautiful event details screen.
+
+Include:
+
+- Large event image
+- Category
+- Event title
+- Full description
+- Date
+- Time
+- Location
+- Address
+- Interested count
+- ❤️ Interested button
+- Map/location button
+- Ticket/website button if available
+- Share button
+
+The page should feel immersive and match the event's category colors.
+
+For example:
+A music event should feel like music.
+A drift event should feel fast.
+A food event should feel warm.
+A football event should feel energetic.
+
+==================================================
+9. INTERESTED SYSTEM
+==================================================
+
+Users can press:
+
+❤️ Interested
+
+Show:
+
+"1.8K interested"
+
+The count should be visible on event cards and event pages.
+
+For V1, users should be able to toggle their interest.
+
+Do not build chat or comments.
+
+==================================================
+10. MAP / GOING OUTSIDE
+==================================================
+
+The goal is to help the user actually attend the event.
+
+The event details page should have:
+
+📍 Open Location
+
+This should eventually open the appropriate map application.
+
+Also support:
+- event address
+- venue name
+- external ticket link
+- official event website if available
+
+The app should make it easy to leave the app and go to the event.
+
+==================================================
+11. TIME ORGANIZATION
+==================================================
+
+Events should be organized by:
+
+TODAY
+TOMORROW
+THIS WEEK
+NEXT MONTH
+
+Eventually support actual date filtering.
+
+Each event must have:
+- start date
+- start time
+- optional end date
+- optional end time
+
+Automatically categorize events based on their dates.
+
+==================================================
+12. ADMIN SYSTEM
+==================================================
+
+Normal users should NOT create events in V1.
+
+Create an admin system where the app owner can add events.
+
+Admin should be able to enter:
+
+- Event title
+- Category
+- Image
+- Description
+- Date
+- Time
+- End date/time
+- Venue
+- Address
+- City
+- Country
+- Latitude
+- Longitude
+- Ticket URL
+- Official website
+- Interested count / initial count
+- Event status
+
+Admin can:
+- create events
+- edit events
+- delete events
+- publish/unpublish events
+
+==================================================
+13. DATABASE
+==================================================
+
+Use a proper database.
+
+Prefer Supabase if practical.
+
+Create tables such as:
+
+users
+events
+categories
+event_interests
+notifications
+notification_preferences
+
+EVENTS should contain fields similar to:
+
+id
+title
+description
+category
+image_url
+start_date
+start_time
+end_date
+end_time
+venue
+address
+city
+country
+latitude
+longitude
+ticket_url
+website_url
+created_at
+updated_at
+published
+
+EVENT_INTERESTS:
+
+id
+user_id
+event_id
+created_at
+
+Make sure a user can only have one interest record per event.
+
+==================================================
+14. AUTHENTICATION
+==================================================
+
+V1 should support simple authentication.
+
+Allow:
+- email signup
+- email login
+
+Keep the profile simple.
+
+The user does NOT need a complicated social profile.
+
+Profile can contain:
+- name
+- city
+- preferred categories
+- notification preferences
+- events they are interested in
+
+==================================================
+15. LOCATION
+==================================================
+
+Start with Tunisia.
+
+Cities can include:
+- Tunis
+- Ariana
+- Ben Arous
+- Manouba
+- La Marsa
+- Carthage
+- Sousse
+- Monastir
+- Sfax
+- Hammamet
+- Nabeul
+- Bizerte
+- Djerba
+- Gabes
+- other Tunisian cities
+
+Design the architecture so other countries can be added later.
+
+Do NOT hard-code Tunisia so deeply that expansion becomes difficult.
+
+==================================================
+16. V1 SCOPE
+==================================================
+
+Keep V1 focused.
+
+V1 MUST include:
+
+1. Discover screen
+2. Time filters
+3. Categories
+4. Event cards
+5. Event details
+6. Interested button/count
+7. Notifications UI
+8. User authentication
+9. User preferences
+10. Admin event management
+11. Database
+12. Map/external location link
+13. External ticket/website link
+14. Responsive mobile design
+
+DO NOT add these in V1:
+
+- chat
+- direct messaging
+- comments
+- complex friend system
+- social feed
+- livestreaming
+- complicated gamification
+- unnecessary features
+
+==================================================
+17. FUTURE FEATURES
+==================================================
+
+Do NOT implement these yet, but architect the project so they can be added later:
+
+- personalized recommendations
+- nearby events
+- trending events
+- friend activity
+- see friends interested in an event
+- user-created events
+- ticket purchasing
+- event map
+- AI recommendations
+- event organizer accounts
+- sponsored events
+- multiple countries
+- multiple languages
+- advanced notification personalization
+
+==================================================
+18. TECHNICAL REQUIREMENTS
+==================================================
+
+Build this as a real mobile application for Android and iPhone.
+
+Prefer:
+
+React Native
+Expo
+TypeScript
+Supabase
+
+Use clean, modular architecture.
+
+Use reusable components:
+
+EventCard
+CategoryChip
+NotificationCard
+EventDetails
+TimeFilter
+CategorySelector
+InterestedButton
+LocationButton
+NotificationSettings
+etc.
+
+Use a central theme file for colors.
+
+Example theme direction:
+
+background:
+deep navy / near black
+
+primary:
+electric purple
+
+secondary:
+electric blue
+
+accent:
+magenta/pink
+
+highlight:
+gold/orange
+
+Do not use random colors throughout the application.
+
+Every color should belong to the visual system.
+
+==================================================
+19. ANIMATIONS
+==================================================
+
+Use subtle premium animations.
+
+Examples:
+- glowing notification entrance
+- card fade/slide
+- category transitions
+- button press animation
+- subtle neon pulse
+- smooth navigation
+
+Do not overdo animations.
+
+The application should feel polished rather than chaotic.
+
+==================================================
+20. IMPORTANT DESIGN RULE
+==================================================
+
+Do NOT make every event card identical.
+
+The layout structure can stay consistent, but:
+- category colors
+- gradients
+- glow
+- icon
+- image treatment
+- small visual details
+
+should change depending on the event.
+
+The user should be able to FEEL the category visually.
+
+==================================================
+21. SAMPLE EVENTS FOR DEVELOPMENT
+==================================================
+
+Create realistic sample events for Tunisia so the application looks alive.
+
+Examples:
+
+🎵 Live Concert — Tunis
+Today • 20:00
+Carthage
+1.8K interested
+
+⚽ Football Match
+Today • 21:00
+Tunis
+2.4K interested
+
+🏎️ Tunis Drift Show
+Tomorrow • 16:00
+Tunis
+642 interested
+
+🍔 Street Food Festival
+This Week
+La Marsa
+950 interested
+
+🎨 Art Exhibition
+This Week
+Tunis
+320 interested
+
+🎮 Gaming Tournament
+Tomorrow
+Tunis
+510 interested
+
+🏖️ Outdoor Adventure
+Next Month
+Hammamet
+780 interested
+
+These are demo events only.
+
+==================================================
+22. RESPONSIVENESS
+==================================================
+
+The primary target is mobile.
+
+Design for:
+- iPhone
+- Android
+
+Make sure the UI works on different screen sizes.
+
+The notification/event cards should look good on small screens.
+
+==================================================
+23. DEVELOPMENT APPROACH
+==================================================
+
+DO NOT just create a static mockup.
+
+Build the application architecture so it can become a real production application.
+
+Start with:
+
+1. Project setup
+2. Theme/design system
+3. Navigation
+4. Discover screen
+5. Event components
+6. Event details
+7. Authentication
+8. Supabase database
+9. Interested system
+10. Admin system
+11. Notification infrastructure
+12. Map/external links
+13. Testing
+14. Polish
+
+If something cannot be fully implemented in the Replit environment, create the correct architecture and clearly mark what requires external credentials or deployment configuration.
+
+==================================================
+24. MOST IMPORTANT GOAL
+==================================================
+
+Remember the purpose of the entire product:
+
+People are bored.
+
+They don't know where to go.
+
+They don't know what is happening.
+
+Have Fun tells them:
+
+"COME WITH US.
+Have fun!"
+
+Then gives them the information they need to go outside.
+
+The success of the application is NOT measured by how long people stay inside the app.
+
+The ideal result is:
+
+User receives notification
+→ sees something interesting
+→ opens it
+→ gets the location
+→ goes outside
+→ has fun.
+
+Build the application around this philosophy.
+
+==================================================
+25. FIRST TASK
+==================================================
+
+Start by building the V1 mobile application.
+
+Before adding unnecessary features, make the Discover screen and Event Details screen look excellent.
+
+The visual quality is extremely important.
+
+Use the dark cinematic neon style described above:
+purple + electric blue + pink + gold/orange,
+glowing borders,
+glassmorphism,
+beautiful event images,
+category-specific colors,
+and "COME WITH US — Have fun!" branding.
+
+Make it feel like a premium modern app, not a generic calendar.
+
+Then implement the real functionality behind the UI.
