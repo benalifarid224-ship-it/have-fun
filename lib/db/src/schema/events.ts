@@ -1,0 +1,46 @@
+import {
+  boolean,
+  integer,
+  jsonb,
+  pgTable,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
+
+export const eventsTable = pgTable("events", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  subtitle: text("subtitle").notNull(),
+  curiosityLine: text("curiosity_line").notNull(),
+  category: text("category").notNull(),
+  categoryLabel: text("category_label").notNull(),
+  icon: text("icon").notNull(),
+  description: text("description").notNull(),
+  dateLabel: text("date_label").notNull(),
+  time: text("time").notNull(),
+  location: text("location").notNull(),
+  venue: text("venue").notNull(),
+  address: text("address").notNull(),
+  city: text("city").notNull(),
+  country: text("country").notNull(),
+  interested: integer("interested").notNull().default(0),
+  imageUrl: text("image_url").notNull(),
+  galleryUrls: jsonb("gallery_urls").$type<string[]>().notNull().default([]),
+  accent: text("accent").notNull(),
+  tint: text("tint").notNull(),
+  ticketUrl: text("ticket_url"),
+  websiteUrl: text("website_url"),
+  audioUrl: text("audio_url"),
+  audioEnabled: boolean("audio_enabled").notNull().default(false),
+  audioDuration: integer("audio_duration"),
+  organizerName: text("organizer_name"),
+  ageRequirement: text("age_requirement"),
+  additionalInfo: text("additional_info"),
+  atmosphere: text("atmosphere").notNull(),
+  timeFilter: text("time_filter").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export type EventRow = typeof eventsTable.$inferSelect;
+export type InsertEvent = typeof eventsTable.$inferInsert;

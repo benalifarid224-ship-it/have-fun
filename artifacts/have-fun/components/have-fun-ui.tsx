@@ -314,7 +314,7 @@ export function InterestedButton({ event }: { event: Event }) {
   );
 }
 
-export function AudioPreview({ source, accent, duration = 8 }: { source?: number; accent: string; duration?: number }) {
+export function AudioPreview({ source, accent, duration = 8 }: { source?: number | string; accent: string; duration?: number }) {
   const colors = useColors();
   const player = useAudioPlayer(source ?? null, { updateInterval: 250 });
   const status = useAudioPlayerStatus(player);

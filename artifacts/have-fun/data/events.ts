@@ -36,7 +36,7 @@ export type Event = {
   ticketUrl?: string;
   websiteUrl?: string;
   galleryImages?: ImageSourcePropType[];
-  audioSource?: number;
+  audioSource?: number | string;
   audioEnabled: boolean;
   audioDuration?: number;
   organizerName?: string;

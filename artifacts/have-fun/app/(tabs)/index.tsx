@@ -5,6 +5,7 @@ import { FlatList, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { EventCard, BrandMark, CategorySelector, LiveSignal, ScreenBackground, SectionLabel, TimeFilterRow } from '@/components/have-fun-ui';
 import { events } from '@/data/events';
+import { fetchRemoteEvents } from '@/data/api-events';
 import { useColors } from '@/hooks/useColors';
 
 export default function DiscoverScreen() {
@@ -14,14 +15,40 @@ export default function DiscoverScreen() {
   const [timeFilter, setTimeFilter] = useState('today');
   const [category, setCategory] = useState('all');
   const [refreshing, setRefreshing] = useState(false);
+  const [availableEvents, setAvailableEvents] = useState(events);
+  const [feedMessage, setFeedMessage] = useState<string | null>(null);
   const filteredEvents = useMemo(
-    () => events.filter((event) => event.timeFilter === timeFilter && (category === 'all' || event.category === category)),
-    [category, timeFilter],
+    () => availableEvents.filter((event) => event.timeFilter === timeFilter && (category === 'all' || event.category === category)),
+    [availableEvents, category, timeFilter],
   );
+
+  React.useEffect(() => {
+    let mounted = true;
+    void fetchRemoteEvents()
+      .then((remoteEvents) => {
+        if (!mounted || remoteEvents.length === 0) return;
+        setAvailableEvents(remoteEvents);
+        setFeedMessage(null);
+      })
+      .catch(() => {
+        if (mounted) setFeedMessage('Live feed unavailable · showing local picks');
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const refresh = () => {
     setRefreshing(true);
-    setTimeout(() => setRefreshing(false), 500);
+    void fetchRemoteEvents()
+      .then((remoteEvents) => {
+        if (remoteEvents.length > 0) {
+          setAvailableEvents(remoteEvents);
+          setFeedMessage(null);
+        }
+      })
+      .catch(() => setFeedMessage('Live feed unavailable · showing local picks'))
+      .finally(() => setRefreshing(false));
   };
 
   return (
@@ -61,7 +88,8 @@ export default function DiscoverScreen() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoryContent}>
               <CategorySelector selected={category} onChange={setCategory} />
             </ScrollView>
-            <LiveSignal count={events.filter((event) => event.timeFilter === 'today').length} accent={colors.pink} />
+            <LiveSignal count={availableEvents.filter((event) => event.timeFilter === 'today').length} accent={colors.pink} />
+            {feedMessage && <Text style={[styles.feedMessage, { color: colors.mutedForeground }]}>{feedMessage}</Text>}
             <SectionLabel eyebrow="DISCOVER" title={timeFilter === 'today' ? 'Tonight in Tunis' : `Coming up ${timeFilter === 'week' ? 'this week' : timeFilter === 'month' ? 'next month' : 'tomorrow'}`} />
             {filteredEvents.length === 0 && (
               <View style={[styles.empty, { backgroundColor: colors.glass, borderColor: colors.border }]}>
@@ -105,4 +133,5 @@ const styles = StyleSheet.create({
   footerNote: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingTop: 8 },
   footerLine: { flex: 1, height: 1 },
   footerText: { fontSize: 9, fontWeight: '700', letterSpacing: 1.7 },
+  feedMessage: { fontSize: 11, textAlign: 'center', marginTop: -12, marginBottom: 14 },
 });
