@@ -4,7 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { Image, Linking, Pressable, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { InterestedButton, IconButton, ScreenBackground, styles as ui } from '@/components/have-fun-ui';
+import { AtmosphereLayer, AudioPreview, AnimatedEventImage, InterestedButton, IconButton, ScreenBackground, styles as ui } from '@/components/have-fun-ui';
 import { events, formatInterested } from '@/data/events';
 import { useAppState } from '@/context/app-state';
 import { useColors } from '@/hooks/useColors';
@@ -31,8 +31,9 @@ export default function EventDetailsScreen() {
     <ScreenBackground>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 28 }}>
         <View style={styles.heroImage}>
-          <Image source={event.image} style={StyleSheet.absoluteFill} resizeMode="cover" />
+          <AnimatedEventImage source={event.image} style={StyleSheet.absoluteFill} />
           <LinearGradient colors={['rgba(8,9,20,0.18)', colors.background]} locations={[0.25, 1]} style={StyleSheet.absoluteFill} />
+          <AtmosphereLayer event={event} />
           <View style={[styles.header, { top: insets.top + 12 }]}>
             <IconButton icon="arrow-left" label="Go back" onPress={() => router.back()} />
             <View style={styles.headerActions}>
@@ -45,6 +46,7 @@ export default function EventDetailsScreen() {
               <Text style={[styles.categoryBadgeText, { color: colors.navy }]}>{event.categoryLabel.toUpperCase()}</Text>
             </View>
             <Text style={[styles.title, { color: colors.foreground }]}>{event.title}</Text>
+            <Text style={[styles.heroCuriosity, { color: colors.secondaryForeground }]}>{event.curiosityLine}</Text>
           </View>
         </View>
         <View style={styles.body}>
@@ -63,6 +65,7 @@ export default function EventDetailsScreen() {
             </View>
           </View>
           <Text style={[styles.description, { color: colors.secondaryForeground }]}>{event.description}</Text>
+          <AudioPreview source={event.audioEnabled ? event.audioSource : undefined} accent={event.accent} duration={event.audioDuration} />
           <View style={[styles.venueCard, { backgroundColor: colors.glass, borderColor: colors.border }]}>
             <View style={[styles.venueIcon, { backgroundColor: `${event.accent}20` }]}>
               <Feather name="map-pin" size={19} color={event.accent} />
@@ -75,6 +78,14 @@ export default function EventDetailsScreen() {
               <Feather name="arrow-up-right" size={18} color={event.accent} />
             </Pressable>
           </View>
+          {(event.organizerName || event.ageRequirement || event.additionalInfo) && (
+            <View style={[styles.infoCard, { backgroundColor: colors.glass, borderColor: colors.border }]}>
+              <Text style={[styles.infoEyebrow, { color: event.accent }]}>GOOD TO KNOW</Text>
+              {event.organizerName && <View style={styles.infoRow}><Text style={[styles.infoLabel, { color: colors.mutedForeground }]}>Organizer</Text><Text style={[styles.infoValue, { color: colors.foreground }]}>{event.organizerName}</Text></View>}
+              {event.ageRequirement && <View style={styles.infoRow}><Text style={[styles.infoLabel, { color: colors.mutedForeground }]}>Age</Text><Text style={[styles.infoValue, { color: colors.foreground }]}>{event.ageRequirement}</Text></View>}
+              {event.additionalInfo && <Text style={[styles.additionalInfo, { color: colors.secondaryForeground }]}>{event.additionalInfo}</Text>}
+            </View>
+          )}
           <View style={styles.interestedRow}>
             <View style={styles.interestedCount}>
               <Feather name="heart" size={17} color={event.accent} fill={interested ? event.accent : 'transparent'} />
@@ -102,6 +113,7 @@ const styles = StyleSheet.create({
   categoryBadge: { alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'center', gap: 6, borderRadius: 9, paddingHorizontal: 10, paddingVertical: 7 },
   categoryBadgeText: { fontSize: 9, fontWeight: '800', letterSpacing: 1.1 },
   title: { fontSize: 37, lineHeight: 41, fontWeight: '700', letterSpacing: -1.25, marginTop: 13 },
+  heroCuriosity: { fontSize: 14, lineHeight: 20, marginTop: 8, maxWidth: 310 },
   body: { paddingHorizontal: 19, paddingTop: 4 },
   detailMeta: { flexDirection: 'row', gap: 25, paddingVertical: 20, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.08)' },
   detailMetaItem: { flexDirection: 'row', alignItems: 'center', gap: 9, flex: 1 },
@@ -114,6 +126,12 @@ const styles = StyleSheet.create({
   venueCopy: { flex: 1 },
   venueName: { fontSize: 13, fontWeight: '700' },
   venueAddress: { fontSize: 11, marginTop: 3 },
+  infoCard: { borderWidth: 1, borderRadius: 18, padding: 15, marginTop: 12 },
+  infoEyebrow: { fontSize: 9, fontWeight: '800', letterSpacing: 1.6, marginBottom: 11 },
+  infoRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 7, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.07)' },
+  infoLabel: { fontSize: 11 },
+  infoValue: { fontSize: 11, fontWeight: '700' },
+  additionalInfo: { fontSize: 12, lineHeight: 18, marginTop: 11 },
   interestedRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 20 },
   interestedCount: { flexDirection: 'row', alignItems: 'center', gap: 7 },
   countText: { fontSize: 13, fontWeight: '700' },

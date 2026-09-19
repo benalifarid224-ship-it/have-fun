@@ -1,0 +1,1 @@
+- [Event audio previews](audio-preview.md) — optional, muted-by-default, detail-page atmosphere layer with graceful no-audio behavior.

@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { FlatList, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { EventCard, BrandMark, CategorySelector, ScreenBackground, SectionLabel, TimeFilterRow } from '@/components/have-fun-ui';
+import { EventCard, BrandMark, CategorySelector, LiveSignal, ScreenBackground, SectionLabel, TimeFilterRow } from '@/components/have-fun-ui';
 import { events } from '@/data/events';
 import { useColors } from '@/hooks/useColors';
 
@@ -61,6 +61,7 @@ export default function DiscoverScreen() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoryContent}>
               <CategorySelector selected={category} onChange={setCategory} />
             </ScrollView>
+            <LiveSignal count={events.filter((event) => event.timeFilter === 'today').length} accent={colors.pink} />
             <SectionLabel eyebrow="DISCOVER" title={timeFilter === 'today' ? 'Tonight in Tunis' : `Coming up ${timeFilter === 'week' ? 'this week' : timeFilter === 'month' ? 'next month' : 'tomorrow'}`} />
             {filteredEvents.length === 0 && (
               <View style={[styles.empty, { backgroundColor: colors.glass, borderColor: colors.border }]}>

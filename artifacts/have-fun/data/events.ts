@@ -16,6 +16,8 @@ export type TimeFilter = 'today' | 'tomorrow' | 'week' | 'month';
 export type Event = {
   id: string;
   title: string;
+  subtitle: string;
+  curiosityLine: string;
   category: Exclude<CategoryId, 'all'>;
   categoryLabel: string;
   icon: string;
@@ -33,6 +35,14 @@ export type Event = {
   tint: string;
   ticketUrl?: string;
   websiteUrl?: string;
+  galleryImages?: ImageSourcePropType[];
+  audioSource?: number;
+  audioEnabled: boolean;
+  audioDuration?: number;
+  organizerName?: string;
+  ageRequirement?: string;
+  additionalInfo?: string;
+  atmosphere: 'pulse' | 'waves' | 'streaks' | 'warm' | 'particles' | 'grid' | 'calm';
   timeFilter: TimeFilter;
 };
 
@@ -57,6 +67,8 @@ export const events: Event[] = [
   {
     id: 'live-concert-tunis',
     title: 'Live Concert — Tunis',
+    subtitle: 'Live under the stars',
+    curiosityLine: 'One night. Great music. Thousands of people.',
     category: 'music',
     categoryLabel: 'Music',
     icon: 'music-note',
@@ -73,12 +85,21 @@ export const events: Event[] = [
     image: require('../assets/images/event-concert.jpg'),
     accent: '#ff4fa4',
     tint: '#a977ff',
+    audioSource: require('../assets/audio/nightlife-preview.wav'),
+    audioEnabled: true,
+    audioDuration: 8,
+    organizerName: 'Carthage Live',
+    ageRequirement: 'All ages',
+    additionalInfo: 'Doors open at 19:00. Bring a valid ticket and arrive early for the best view.',
+    atmosphere: 'waves',
     timeFilter: 'today',
     ticketUrl: 'https://www.google.com/search?q=concerts+in+tunis',
   },
   {
     id: 'football-night-tunis',
     title: 'Football Match Night',
+    subtitle: 'The stadium is getting ready',
+    curiosityLine: 'Tonight, the city picks a side.',
     category: 'sports',
     categoryLabel: 'Sports',
     icon: 'soccer',
@@ -95,11 +116,18 @@ export const events: Event[] = [
     image: require('../assets/images/event-concert.jpg'),
     accent: '#91ed77',
     tint: '#3dc8ff',
+    audioEnabled: false,
+    organizerName: 'Tunis Matchday',
+    ageRequirement: 'All ages',
+    additionalInfo: 'Gates open 90 minutes before kick-off. Stadium security rules apply.',
+    atmosphere: 'pulse',
     timeFilter: 'today',
   },
   {
     id: 'tunis-drift-show',
     title: 'Tunis Drift Show',
+    subtitle: 'Engines are getting ready...',
+    curiosityLine: 'Feel the engines. Feel the speed.',
     category: 'drift',
     categoryLabel: 'Cars & Drift',
     icon: 'car-sports',
@@ -116,12 +144,21 @@ export const events: Event[] = [
     image: require('../assets/images/event-drift.jpg'),
     accent: '#ff667c',
     tint: '#ff8d4d',
+    audioSource: require('../assets/audio/drift-preview.wav'),
+    audioEnabled: true,
+    audioDuration: 8,
+    organizerName: 'Tunis Motor Park',
+    ageRequirement: '12+',
+    additionalInfo: 'Spectator areas are marked around the course. Follow crew instructions at all times.',
+    atmosphere: 'streaks',
     timeFilter: 'tomorrow',
     ticketUrl: 'https://www.google.com/search?q=tunis+drift+show',
   },
   {
     id: 'street-food-festival',
     title: 'Street Food Festival',
+    subtitle: 'Follow the warm lights',
+    curiosityLine: 'One more plate? Definitely.',
     category: 'food',
     categoryLabel: 'Food',
     icon: 'silverware-fork-knife',
@@ -138,11 +175,18 @@ export const events: Event[] = [
     image: require('../assets/images/event-food.jpg'),
     accent: '#ffbd63',
     tint: '#ff8d4d',
+    audioEnabled: false,
+    organizerName: 'Marsa Makers',
+    ageRequirement: 'All ages',
+    additionalInfo: 'A rotating line-up of local kitchens, pop-up tables, and late-night bites.',
+    atmosphere: 'warm',
     timeFilter: 'week',
   },
   {
     id: 'art-after-dark',
     title: 'Art After Dark',
+    subtitle: 'The gallery stays open late',
+    curiosityLine: 'Come for the rooms. Stay for the conversations.',
     category: 'art',
     categoryLabel: 'Art & Culture',
     icon: 'palette-outline',
@@ -159,11 +203,18 @@ export const events: Event[] = [
     image: require('../assets/images/event-food.jpg'),
     accent: '#64f6d5',
     tint: '#a977ff',
+    audioEnabled: false,
+    organizerName: 'M7 Contemporary',
+    ageRequirement: 'All ages',
+    additionalInfo: 'Late opening with artist-led conversations throughout the evening.',
+    atmosphere: 'particles',
     timeFilter: 'week',
   },
   {
     id: 'gaming-tournament',
     title: 'Gaming Tournament',
+    subtitle: 'Ready up, Tunis',
+    curiosityLine: 'Fast rounds. Local rivals. One room full of players.',
     category: 'gaming',
     categoryLabel: 'Gaming',
     icon: 'controller-classic-outline',
@@ -180,11 +231,18 @@ export const events: Event[] = [
     image: require('../assets/images/event-drift.jpg'),
     accent: '#3dc8ff',
     tint: '#a977ff',
+    audioEnabled: false,
+    organizerName: 'The Arcade House',
+    ageRequirement: '13+',
+    additionalInfo: 'Open bracket. Bring your own controller or use the venue setup.',
+    atmosphere: 'grid',
     timeFilter: 'tomorrow',
   },
   {
     id: 'hammamet-outdoor-adventure',
     title: 'Hammamet Outdoor Adventure',
+    subtitle: 'Escape the city this weekend',
+    curiosityLine: 'Sea air, new paths, and a different view.',
     category: 'outdoor',
     categoryLabel: 'Outdoor',
     icon: 'weather-sunny',
@@ -201,6 +259,11 @@ export const events: Event[] = [
     image: require('../assets/images/event-food.jpg'),
     accent: '#50d9c2',
     tint: '#3dc8ff',
+    audioEnabled: false,
+    organizerName: 'Hammamet Outside',
+    ageRequirement: 'All ages',
+    additionalInfo: 'Wear comfortable shoes, bring water, and expect a full day outside.',
+    atmosphere: 'calm',
     timeFilter: 'month',
   },
 ];
