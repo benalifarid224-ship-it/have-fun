@@ -1,0 +1,931 @@
+UPGRADE PROMPT — HAVE FUN V1 → V2
+==================================
+
+I already have the Have Fun mobile application.
+
+The current application works, but it feels too basic.
+
+I want you to redesign and upgrade the experience so that users become CURIOUS about what is happening and actually WANT to click on events.
+
+Do not throw away the existing concept or visual identity.
+
+Keep everything that already works, but make the application significantly more immersive, emotional, dynamic and premium.
+
+==================================================
+1. CORE EXPERIENCE
+==================================================
+
+The current app is an event discovery application.
+
+Its purpose is:
+
+"I'm bored. What can I do?"
+
+The app discovers interesting activities and events around the user and tells them about them.
+
+The goal is NOT to keep users inside the application.
+
+The ideal journey is:
+
+NOTIFICATION
+↓
+CURIOSITY
+↓
+EVENT PREVIEW
+↓
+"WHAT IS THIS?"
+↓
+OPEN EVENT
+↓
+GET EXCITED
+↓
+SEE LOCATION / TICKET / DETAILS
+↓
+LEAVE APP
+↓
+GO HAVE FUN
+
+The app should feel like it is constantly saying:
+
+"Something is happening.
+Come with us.
+Have fun."
+
+==================================================
+2. THE BIGGEST CHANGE: MAKE EVENTS FEEL ALIVE
+==================================================
+
+The current event cards are too static.
+
+Do not make events feel like calendar entries.
+
+An event should feel like an EXPERIENCE.
+
+When a user sees:
+
+Football
+Music
+DJ
+Drift
+Camping
+Food
+Art
+Gaming
+etc.
+
+the visual design, animation and optional audio should immediately communicate the FEELING of that activity.
+
+The user should think:
+
+"That looks fun."
+
+or:
+
+"What's happening there?"
+
+or:
+
+"I want to see this."
+
+==================================================
+3. EVENT-SPECIFIC ATMOSPHERE
+==================================================
+
+Every event category should have its own atmosphere.
+
+The overall Have Fun identity remains:
+
+- dark cinematic background
+- deep navy / black
+- neon purple
+- electric blue
+- pink / magenta
+- gold / orange
+- glowing borders
+- glassmorphism
+- cinematic gradients
+- premium animations
+
+But each event category gets its own personality.
+
+-----------------------------------
+FOOTBALL / SPORTS
+-----------------------------------
+
+Feeling:
+
+ENERGY
+MOTIVATION
+COMPETITION
+STADIUM
+ADRENALINE
+
+Use:
+- energetic animations
+- stadium-inspired lighting
+- subtle moving glow
+- energetic blue/green accents
+- crowd/stadium atmosphere when appropriate
+
+Audio:
+Use a properly licensed or royalty-free energetic sports soundtrack.
+
+It should make the user feel:
+"I want to play."
+"I want to go watch this."
+"Something exciting is happening."
+
+Do NOT automatically use copyrighted famous songs without a license.
+
+-----------------------------------
+DJ / NIGHTLIFE
+-----------------------------------
+
+Feeling:
+
+NIGHT
+ENERGY
+LIGHTS
+BASS
+CROWD
+EXCITEMENT
+
+Use:
+- purple
+- magenta
+- electric blue
+- animated equalizer elements
+- subtle light pulses
+- nightclub-inspired gradients
+
+Audio:
+Use a properly licensed/royalty-free electronic or dance track that creates the feeling of a DJ event.
+
+The audio should make the user curious about the actual event.
+
+-----------------------------------
+MUSIC / CONCERT
+-----------------------------------
+
+Feeling:
+
+HARMONY
+EMOTION
+ENERGY
+LIVE PERFORMANCE
+
+Use:
+- purple
+- pink
+- gold
+- soft animated light
+- waveform/equalizer details
+- cinematic imagery
+
+Audio:
+Use an appropriate licensed/royalty-free musical preview that matches the event's genre.
+
+For example:
+- rock → energetic guitar-style instrumental
+- electronic → electronic atmosphere
+- acoustic → warm acoustic atmosphere
+- classical → elegant orchestral atmosphere
+
+-----------------------------------
+CAMPING / OUTDOOR
+-----------------------------------
+
+Feeling:
+
+ADVENTURE
+FREEDOM
+CALM
+NATURE
+DISCOVERY
+
+Use:
+- cyan
+- turquoise
+- deep green
+- subtle stars
+- moon/night gradients where appropriate
+- gentle animations
+
+Audio:
+Use a calm, adventurous, atmospheric licensed/royalty-free soundtrack.
+
+The feeling should be:
+
+"I want to escape."
+"I want to go somewhere."
+"I want to experience this."
+
+-----------------------------------
+DRIFT / CARS
+-----------------------------------
+
+Feeling:
+
+SPEED
+ADRENALINE
+MOTORSport
+POWER
+
+Use:
+- red
+- orange
+- electric blue
+- motion effects
+- speed lines
+- subtle camera/motion animations
+
+Audio:
+Use an energetic licensed/royalty-free motorsport/electronic soundtrack.
+
+-----------------------------------
+FOOD
+-----------------------------------
+
+Feeling:
+
+WARM
+SOCIAL
+TASTY
+RELAXED
+
+Use:
+- orange
+- gold
+- warm gradients
+- appetizing imagery
+- smooth animations
+
+Audio:
+Use a light, positive, social atmosphere when appropriate.
+
+-----------------------------------
+ART / CULTURE
+-----------------------------------
+
+Feeling:
+
+CREATIVE
+ELEGANT
+CURIOUS
+INSPIRING
+
+Use:
+- violet
+- cyan
+- soft gradients
+- artistic transitions
+- elegant motion
+
+Audio:
+Use a calm artistic/ambient licensed soundtrack where appropriate.
+
+-----------------------------------
+GAMING
+-----------------------------------
+
+Feeling:
+
+FUTURISTIC
+COMPETITIVE
+DIGITAL
+ENERGETIC
+
+Use:
+- electric blue
+- purple
+- cyan
+- digital effects
+- subtle HUD-inspired animations
+
+Audio:
+Use a suitable licensed/royalty-free electronic gaming-style atmosphere.
+
+==================================================
+4. AUDIO SYSTEM
+==================================================
+
+Add an optional event audio system.
+
+IMPORTANT:
+
+Do NOT use copyrighted music without proper licensing.
+
+Build the architecture so every event can have:
+
+audio_url
+audio_enabled
+audio_volume
+audio_preview_duration
+
+The audio should be short and atmospheric.
+
+The user should NOT be forced to listen to audio.
+
+Provide:
+- sound on/off
+- mute control
+- respect device mute settings
+- sensible default volume
+
+Do not automatically play loud audio when the app opens.
+
+Audio should be triggered in an intentional way, for example:
+- entering an event preview
+- opening an event detail page
+- tapping an audio/play button
+
+The audio should enhance the experience rather than annoy users.
+
+==================================================
+5. EVENT CARD REDESIGN
+==================================================
+
+Make event cards significantly more visually interesting.
+
+Current problem:
+
+They look too much like normal information cards.
+
+New design:
+
+- large cinematic image
+- image slightly animated
+- category badge
+- category-specific glow
+- event title
+- short mysterious/interesting description
+- date
+- time
+- location
+- interested count
+- subtle animated background
+- clear View Event button
+
+Example:
+
+---------------------------------------
+
+🎵 MUSIC
+
+LIVE UNDER THE STARS
+
+"One night.
+Great music.
+Thousands of people."
+
+TODAY
+20:00
+📍 Carthage
+
+❤️ 1.8K interested
+
+[ DISCOVER EVENT → ]
+
+---------------------------------------
+
+Do not reveal every detail immediately.
+
+Give enough information to create curiosity.
+
+==================================================
+6. CURIOSITY DESIGN
+==================================================
+
+Use copywriting that creates curiosity without being misleading.
+
+Instead of:
+
+"Music event at 20:00."
+
+Use:
+
+"Something special is happening tonight."
+
+Instead of:
+
+"Drift event."
+
+Use:
+
+"Engines are getting ready..."
+
+Instead of:
+
+"Camping event."
+
+Use:
+
+"Escape the city this weekend."
+
+Instead of:
+
+"Football match."
+
+Use:
+
+"The stadium is getting ready."
+
+The copy must remain truthful to the actual event.
+
+Never fabricate information.
+
+==================================================
+7. EVENT DETAIL PAGE — MAJOR UPGRADE
+==================================================
+
+The event detail page currently feels too basic.
+
+Redesign it completely.
+
+When the user opens an event, make it feel like entering the event.
+
+The screen should include:
+
+1. Large cinematic hero image
+
+2. Category identity
+
+3. Event title
+
+4. Emotional/curiosity-driven introduction
+
+5. Full event description
+
+6. Date
+
+7. Time
+
+8. Location
+
+9. Venue
+
+10. Address
+
+11. Map
+
+12. Interested count
+
+13. Interested button
+
+14. Ticket button if available
+
+15. Official website if available
+
+16. Share button
+
+17. Event organizer if available
+
+18. Event rules/information if available
+
+19. Age requirements if provided by the organizer
+
+20. Additional event images if available
+
+21. Optional event audio
+
+22. "COME WITH US — HAVE FUN!" branding
+
+==================================================
+8. IMMERSIVE EVENT HERO
+==================================================
+
+The event page should begin with a large immersive hero.
+
+Example:
+
+IMAGE
+↓
+animated gradient overlay
+↓
+category
+↓
+event title
+↓
+short emotional sentence
+
+For example:
+
+🏎️ DRIFT
+
+TUNIS DRIFT SHOW
+
+"Feel the engines.
+Feel the speed."
+
+Tomorrow
+16:00
+Tunis
+
+❤️ 642 interested
+
+[ I'M INTERESTED ]
+
+The hero should use the event's category colors.
+
+==================================================
+9. EVENT PAGE ANIMATIONS
+==================================================
+
+Add subtle premium animations:
+
+- hero image slow zoom
+- gradient movement
+- category glow
+- button press animation
+- smooth scrolling
+- image transitions
+- subtle particles where appropriate
+- audio waveform if audio is active
+
+Do NOT make the UI chaotic.
+
+Animations should feel expensive and polished.
+
+==================================================
+10. EVENT-SPECIFIC VISUAL EFFECTS
+==================================================
+
+Different events can have subtle effects.
+
+Football:
+- stadium lights
+- subtle crowd atmosphere
+- energy pulse
+
+DJ:
+- equalizer
+- pulsing neon lights
+
+Music:
+- waveform
+- soft light movement
+
+Camping:
+- stars
+- gentle floating particles
+- slow ambient movement
+
+Drift:
+- speed/motion effect
+- light streaks
+
+Food:
+- warm glow
+- subtle floating shapes
+
+Gaming:
+- futuristic digital elements
+
+Art:
+- elegant particles
+- artistic transitions
+
+Effects must remain lightweight and performant.
+
+==================================================
+11. NOTIFICATION UPGRADE
+==================================================
+
+Notifications should also become more attractive.
+
+Instead of boring notifications like:
+
+"New event added."
+
+Use:
+
+🔔 COME WITH US
+HAVE FUN!
+
+🎵 SOMETHING IS HAPPENING TONIGHT
+
+Live Concert — Tunis
+
+20:00
+📍 Carthage
+
+❤️ 1.8K interested
+
+[ DISCOVER ]
+
+Or:
+
+🏎️ ENGINES ARE READY...
+
+Tunis Drift Show
+
+Tomorrow
+16:00
+
+❤️ 642 interested
+
+[ SEE WHAT'S HAPPENING ]
+
+Or:
+
+🏕️ ESCAPE THE CITY
+
+Camping Adventure
+
+This weekend
+
+[ DISCOVER ]
+
+Notifications should be visually consistent with the neon Have Fun identity.
+
+==================================================
+12. "COME WITH US" BRANDING
+==================================================
+
+Make this a recognizable part of the application.
+
+Possible phrases:
+
+COME WITH US
+HAVE FUN!
+
+SOMETHING IS HAPPENING
+
+DON'T STAY BORED
+
+WHAT ARE YOU DOING TONIGHT?
+
+LET'S GO.
+
+DISCOVER SOMETHING NEW.
+
+GET OUT THERE.
+
+Use these carefully.
+
+Do not spam the user.
+
+==================================================
+13. DISCOVER SCREEN
+==================================================
+
+Keep:
+
+TODAY
+TOMORROW
+THIS WEEK
+NEXT MONTH
+
+Keep categories:
+
+⭐ All
+⚽ Football
+🎵 Music
+🎉 Party
+🍔 Food
+🎨 Art
+🏎️ Drift
+🎮 Gaming
+🏖️ Outdoor
+🎤 Shows
+🎓 Student
+⋯ Other
+
+But redesign the page so it feels like a living discovery system.
+
+Add sections such as:
+
+🔥 HAPPENING NOW
+
+TODAY
+
+TOMORROW
+
+THIS WEEKEND
+
+YOU MIGHT LIKE THIS
+
+NEW EVENTS
+
+The sections should be dynamic based on the event database.
+
+==================================================
+14. DO NOT TURN IT INTO A SOCIAL MEDIA APP
+==================================================
+
+Still NO:
+
+- chat
+- direct messaging
+- comments
+- social feed
+- complicated friendships
+- follower system
+
+Keep the product focused.
+
+==================================================
+15. INTERESTED SYSTEM
+==================================================
+
+Make the Interested interaction more satisfying.
+
+When the user presses:
+
+❤️ I'M INTERESTED
+
+show a subtle animation.
+
+Update the count.
+
+The event should then appear in the user's saved/interested events.
+
+Do not turn this into gamification.
+
+==================================================
+16. IMAGE SYSTEM
+==================================================
+
+Event images are extremely important.
+
+Each event should support:
+- hero image
+- optional gallery images
+
+Images should be displayed in a cinematic way.
+
+Avoid generic small thumbnails wherever possible.
+
+Use high-quality images appropriate to the event category.
+
+Do not use copyrighted images without permission.
+
+==================================================
+17. EVENT DATA
+==================================================
+
+Expand the event database to support:
+
+id
+title
+subtitle
+description
+category
+image_url
+gallery_images
+audio_url
+audio_enabled
+audio_duration
+start_date
+start_time
+end_date
+end_time
+venue
+address
+city
+country
+latitude
+longitude
+ticket_url
+website_url
+organizer_name
+organizer_logo
+age_requirement
+additional_info
+published
+created_at
+updated_at
+
+==================================================
+18. AUDIO PERFORMANCE
+==================================================
+
+Audio must not destroy the user experience.
+
+Requirements:
+
+- audio must be optional
+- default to reasonable volume
+- allow mute
+- stop audio when leaving the event
+- do not play multiple tracks simultaneously
+- avoid unnecessary downloads
+- preload only when appropriate
+- use compressed audio
+- handle failed audio gracefully
+
+If audio cannot load, the event must still work perfectly.
+
+==================================================
+19. ACCESSIBILITY
+==================================================
+
+Despite the cinematic design:
+
+- text must remain readable
+- buttons must be clear
+- sufficient contrast
+- don't rely only on color
+- support screen readers where practical
+- audio must always have a mute option
+
+==================================================
+20. PERFORMANCE
+==================================================
+
+The application should remain fast.
+
+Do not add heavy visual effects that cause:
+- lag
+- overheating
+- slow startup
+- excessive memory use
+
+Use optimized images and lazy loading.
+
+==================================================
+21. V1/V2 PRIORITY
+==================================================
+
+Prioritize:
+
+1. Beautiful event cards
+2. Beautiful event detail page
+3. Category atmosphere
+4. Curiosity-driven presentation
+5. Optional event audio
+6. Notifications
+7. Interested system
+8. Maps
+9. Ticket/website links
+
+Do not spend time building chat or unnecessary social features.
+
+==================================================
+22. FINAL DESIGN STANDARD
+==================================================
+
+The final application should NOT look like:
+
+- Google Calendar
+- Eventbrite
+- a basic CRUD application
+- a generic React Native template
+
+It should feel like:
+
+A futuristic discovery platform where every event has its own atmosphere.
+
+Dark.
+Neon.
+Cinematic.
+Colorful.
+Emotional.
+Curious.
+Premium.
+Energetic.
+
+The user should open the application and immediately feel:
+
+"What's happening?"
+
+Then:
+
+"That looks interesting."
+
+Then:
+
+"I want to go."
+
+And finally:
+
+"Let's go have fun."
+
+==================================================
+23. IMPORTANT
+==================================================
+
+Do not simply add more information to the existing UI.
+
+RETHINK the visual presentation.
+
+The problem is not lack of information.
+
+The problem is that the current experience feels too static.
+
+Make the application emotionally engaging while keeping it simple to use.
+
+The goal is:
+
+DISCOVER
+→ FEEL
+→ GET CURIOUS
+→ GO
+
+Not:
+
+OPEN APP
+→ SCROLL FOREVER
+→ STAY IN APP.
+
+Implement this upgrade while preserving the existing Have Fun brand and functionality.
